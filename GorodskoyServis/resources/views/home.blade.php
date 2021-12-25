@@ -1,5 +1,5 @@
 @extends("layouts.servis-layout")
-
+@extends("layouts.header")
 
 @section("title")
     Главная

@@ -11,19 +11,7 @@
 <body>
     
 <!-- ---------------------------------- -->
-<header>
-        <div class="header-content">
-
-        <img src="{{ URL::to('/assets/images/logo.png') }}">
-
-        <nav>
-            <a href="#">Главная</a>
-            <a href="#">Регистрация</a>
-            <a href="#">Вход</a>
-        </nav>
-
-        </div>
-    </header>
+    @yield('header')
 <!-- ---------------------------------- -->
     <main>
         <div class="content">
