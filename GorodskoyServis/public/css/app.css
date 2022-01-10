@@ -32169,12 +32169,6 @@ header{
   padding-top: 5px;
 }
 
-nav a{
-  margin-left: 25px;
-  font-size: 18px;
-  line-height: 21px;
-}
-
 h1{
   font-size: 36px;
   line-height: 42px;
@@ -32270,6 +32264,46 @@ main{
 footer{
   background-color: #F5A351;
   height: 50px;
+}
+
+nav {
+  display: flex;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+nav a{
+  margin-right: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+nav ul{
+  display: flex;
+}
+
+/* скрываем выпадающие списки по умолчанию
+			 * и задаем абсолютное позиционирование */
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+
+nav ul li:hover > ul {
+  display:inherit;
+}
+
+/* первый уровень выпадающего списка */
+
+nav ul ul li {
+  min-width:170px;
+  float:none;
+  display:list-item;
+  position: relative;
 }
 
 @media (min-width: 640px) {
@@ -188710,12 +188744,4 @@ footer{
   .\32xl\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
-
-.in-line{
-  display: flex;
-}
-
-.bg-company{
-  background-color:#F5A351;
 }
