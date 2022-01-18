@@ -30,4 +30,8 @@ Route::get('/user-create-form', function () {
     return view('form');
 })->middleware(['auth'])->name('user-create-form');
 
+Route::get('/admin', function () {
+    return view('adminpanel');
+})->middleware(['auth'])->name('admin');
+
 require __DIR__.'/auth.php';
