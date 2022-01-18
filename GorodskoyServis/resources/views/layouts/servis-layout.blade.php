@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\resources\css\app.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="..\..\css\app.css">
+    <title>@yield('title')</title>
 </head>
 
 <body>
-    <header></header>
+    
+<!-- ---------------------------------- -->
+    @yield('header')
+<!-- ---------------------------------- -->
+    <main>
+        <div class="content">
+            @yield('content')
+        </div>
+    </main>
 
 
-@include('content')
+<!-- ---------------------------------- -->
 
+<footer></footer>
 
-    <footer></footer>
+<!-- ---------------------------------- -->
 </body>
 
 </html>

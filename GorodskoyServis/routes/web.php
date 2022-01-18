@@ -14,11 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/userroom', function () {
+    return view('userroom');
+})->middleware(['auth'])->name('userroom');
+
+Route::get('/user-create-form', function () {
+    return view('form');
+})->middleware(['auth'])->name('user-create-form');
 
 require __DIR__.'/auth.php';

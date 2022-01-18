@@ -32137,6 +32137,290 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-weight: 400;
+  transition: .5s;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  background-color: #F7E0CA ;
+}
+
+header{
+  background-color: #F5A351;
+  height: 75px;
+}
+
+.header-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+h1{
+  font-size: 36px;
+  line-height: 42px;
+  margin: 25px 0 35px;
+}
+
+.orange-box{
+  background-color:#F5A351;
+  width: 95%;
+  padding: 16px 30px;
+  border-radius: 15px;
+}
+
+.orange-box h2{
+  margin-bottom: 0;
+}
+
+h2{
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.logo img:hover{
+  box-shadow: 0 0 8px 8px  #F7E0CA;
+}
+
+main{
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
+  min-height:850px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.blocks{
+  margin: 32px 0;
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.card{
+  padding: 25px 0;
+  width: 500px;
+  background-color: #A7DDD3;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.card:hover{
+  filter: drop-shadow(10px 10px 10px rgba(53, 146, 131, 0.25));
+}
+
+.card-content{
+  background: rgba(255, 253, 253, 0.5);
+  border-radius: 0px 0px 15px 15px;
+  width: 391px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_text{
+  align-self: flex-start;
+  padding: 18px 31px;
+}
+
+.card_text h2{
+  margin-bottom: 15px;
+}
+
+.card_text small{
+  margin-bottom: 15px;
+}
+
+.card_text p{
+  margin-bottom: 15px;
+}
+
+.card-content img{
+  width: 100%;
+}
+
+footer{
+  background-color: #F5A351;
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+nav a{
+  margin-right: 25px;
+  font-size: 18px;
+  line-height: 21px;
+  border-bottom:1px solid #F5A351;
+}
+
+nav a:hover{
+  border-bottom: 1px solid #000;
+  border-radius:  0 0 2px 2px;
+}
+
+nav ul{
+  display: flex;
+}
+
+/* скрываем выпадающие списки по умолчанию
+			 * и задаем абсолютное позиционирование */
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+
+nav ul li:hover > ul {
+  display:inherit;
+}
+
+/* первый уровень выпадающего списка */
+
+nav ul ul li {
+  min-width:170px;
+  float:none;
+  display:list-item;
+  position: relative;
+}
+
+.solved{
+  font-weight: bold;
+  background-color: #5bc2b1;
+  width: 101%;
+  padding:  5px 0;
+  text-align: center;
+}
+
+.new{
+  font-weight: bold;
+  background-color: #F5A351;
+  width: 101%;
+  padding:  5px 0;
+  text-align: center;
+}
+
+.fucked{
+  font-weight: bold;
+  background-color: #5bc2b1;
+  width: 101%;
+  padding:  5px 0;
+  text-align: center;
+}
+
+.room-navigation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  margin-top: -8px;
+  height: 48px;
+}
+
+.room-navigation a{
+  margin: 0 35px;
+  padding: 0 5px;
+  font-size: 24px;
+}
+
+.room-navigation a:hover{
+  cursor: pointer;
+  color: #F5A351;
+  font-size: 26px;
+  border-radius:  0 0 6px 6px;
+}
+
+.choosed{
+  border-bottom: solid 2px #F5A351;
+  border-radius:  0 0 2px 2px;
+}
+
+h2{
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+
+.formspace{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #A7DDD3;
+  padding: 32px 0 12px;
+  border: solid 3px #5bc2b1;
+  border-radius: 10px;
+}
+
+form{
+  width: 70%;
+}
+
+form li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+form li input, form li textarea, select{
+  width: 80%;
+}
+
+button{
+  padding: 12px;
+  border-radius: 15px;
+  background-color:  #5bc2b1;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover{
+  box-shadow: 0 0 8px 8px  #F7E0CA;
+}
+
+button:active{
+  transition: .2s;
+  box-shadow: 0 0 4px 4px  #5bc2b1;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -188576,4 +188860,3 @@ select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-
