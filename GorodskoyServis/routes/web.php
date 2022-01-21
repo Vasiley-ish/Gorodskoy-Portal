@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormSubmit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,20 +15,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('dashboard');
 });
 
 
-Route::get('/dashboard', function () {
-    return view('home');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/userroom', function () {
-    return view('userroom');
-})->middleware(['auth'])->name('userroom');
-
-Route::get('/user-create-form', function () {
-    return view('form');
-})->middleware(['auth'])->name('user-create-form');
-
 require __DIR__.'/auth.php';
+
+Route::group(['middleware' => ['role:user']], function () {
+    
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::get('/userroom', function () {
+        return view('userroom');
+    })->name('userroom');
+    
+    Route::get('/user-create-form', function () {
+        return view('form');
+    })->name('user-create-form'); 
+
+    Route::post('/user-create-form/submit', 
+        'App\Http\Controllers\FormSubmitController@submit'
+    )->name('usersubmit'); 
+});
+
+
+Route::group(['middleware' => ['role:admin']], function () {
+    
+    Route::get('/admin', function () {
+        return view('adminroom');
+    });    
+
+});
