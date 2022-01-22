@@ -19,6 +19,7 @@ class CreateFormSubmitsTable extends Migration
             $table->String('title');
             $table->String('category');
             $table->String('discription');
+            $table->String('status');
            
             $table->timestamps();
         });

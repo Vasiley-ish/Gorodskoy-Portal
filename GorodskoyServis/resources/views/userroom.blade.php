@@ -17,18 +17,31 @@
 <h2>Заявки {{Auth::user()->name}}</h2>
 <div class="blocks">
     
+@foreach($data as $el)
     <div class="card">
         <div class="card-content">
-        	<p class="solved">Решено</p>
+
+            @if($el->status == 'Новая')
+        	<p class="new">{{$el->status}}</p>
+            @endif
+            @if($el->status == 'Решена')
+        	<p class="solved">{{$el->status}}</p>
+            @endif
+            @if($el->status == 'Отклонена')
+        	<p class="fucked">{{$el->status}}</p>
+            @endif
+
+          
+
         <img src="{{ URL::to('/assets/images/plug.jpg') }}">
             <div class="card_text">
-                <h2>Название</h2>
-                <p>Описание lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 
-                    lorem35 lorem35 lorem35</p>
-                <small>15.08.2021</small>
+                <h2>{{$el->title}}</h2>
+                <p>{{$el->discription}}</p>
+                <small>{{$el->created_at}}</small>
             </div>
         </div>
     </div>
+@endforeach
 
 </div>
 

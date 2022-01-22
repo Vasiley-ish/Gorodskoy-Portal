@@ -23,7 +23,7 @@
          <ul>
              <li>
                  <label for="name">Название</label>
-                 <input type="text" name="name" id="name" placeholder="Название заметки" required minlength="5" maxlength="64">
+                 <input type="text" name="title" id="title" placeholder="Название заметки" required minlength="5" maxlength="64">
              </li>
 
              <li>
@@ -36,7 +36,7 @@
 
              <li>
                  <label for="discription">Описание</label>
-                 <textarea id="discription" name="discription" placeholder="Описание..." required minlength="20" ></textarea>
+                 <textarea id="discription" name="discription" placeholder="Описание..." required minlength="10" ></textarea>
              </li>
 
               <li>

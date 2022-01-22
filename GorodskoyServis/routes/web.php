@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FormSubmit;
+use App\Http\Controllers\FormSubmitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +27,9 @@ Route::group(['middleware' => ['role:user']], function () {
         return view('dashboard');
     })->name('dashboard');
     
-    Route::get('/userroom', function () {
-        return view('userroom');
-    })->name('userroom');
+    Route::get('/userroom', 
+        [FormSubmitController::class, 'show']
+    )->name('userroom');
     
     Route::get('/user-create-form', function () {
         return view('form');
