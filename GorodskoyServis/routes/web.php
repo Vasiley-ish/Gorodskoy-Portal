@@ -14,18 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/',  [FormSubmitController::class, 'showhub']);
 
 
 require __DIR__.'/auth.php';
 
-Route::group(['middleware' => ['role:user']], function () {
+Route::group([ 'middleware' => ['auth']], function () {
     
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', 
+        [FormSubmitController::class, 'showhub']
+    )->name('dashboard');
     
     Route::get('/userroom', 
         [FormSubmitController::class, 'show']
@@ -43,8 +41,7 @@ Route::group(['middleware' => ['role:user']], function () {
 
 Route::group(['middleware' => ['role:admin']], function () {
     
-    Route::get('/admin', function () {
-        return view('adminroom');
-    });    
+    Route::get('/admin',  [FormSubmitController::class, 'showadmin']
+    )->name('admin');
 
 });

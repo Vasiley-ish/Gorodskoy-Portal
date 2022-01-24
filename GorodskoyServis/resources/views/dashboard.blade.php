@@ -10,48 +10,26 @@
 <h1>Выполненные заявки</h1>
 
 <div class="orange-box">
-    <h2>всего выполнено заявок: 16</h2>
+    <h2>всего выполнено заявок: 5
+    </h2>
 </div>
 
 <div class="blocks">
-    
+  
+    @foreach($data as $el)
     <div class="card">
         <div class="card-content">
         <img src="{{ URL::to('/assets/images/plug.jpg') }}">
             <div class="card_text">
-                <h2>Название</h2>
-                <p>Описание lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 
-                    lorem35 lorem35 lorem35</p>
-                <small>15.08.2021</small>
+                <h2>{{$el->title}}</h2>
+                <p>{{$el->discription}}</p>
+                <small>{{$el->login}}</small>
+                <small>{{$el->created_at}}</small>
             </div>
         </div>
     </div>
-
-    <div class="card">
-        <div class="card-content">
-        <img src="{{ URL::to('/assets/images/plug.jpg') }}">
-            <div class="card_text">
-                <h2>Название</h2>
-                <p>Описание lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 
-                    lorem35 lorem35 lorem35</p>
-                <small>15.08.2021</small>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="card">
-        <div class="card-content">
-        <img src="{{ URL::to('/assets/images/plug.jpg') }}">
-            <div class="card_text">
-                <h2>Название</h2>
-                <p>Описание lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 lorem35 
-                    lorem35 lorem35 lorem35</p>
-                <small>15.08.2021</small>
-            </div>
-        </div>
-    </div>
-
+ 
+    @endforeach
 </div>
 
 

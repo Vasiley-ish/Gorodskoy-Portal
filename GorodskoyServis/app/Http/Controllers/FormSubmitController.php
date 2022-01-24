@@ -28,4 +28,18 @@ class FormSubmitController extends Controller
         $form = new FormSubmit();
         return view('userroom', ['data' => $form->orderBy('created_at', 'desc')->get()]);
     }
+
+    public  function showadmin(){
+     
+        $form = new FormSubmit();
+        return view('adminroom', ['data' => $form->orderBy('created_at', 'desc')->where('status', 'Новая')->get()]);
+    }
+
+    public  function showhub(){
+     
+        $form = new FormSubmit();
+            return view('dashboard', ['data' => $form->orderBy('created_at', 'desc')->where('status', 'Решена')->take(4)->get()],
+            
+        );
+    }
 }

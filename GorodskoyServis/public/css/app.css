@@ -32234,6 +32234,11 @@ main{
   margin-bottom: 32px;
 }
 
+.admin{
+  min-width: 90%;
+  background-color: #A7DDD3;
+}
+
 .card:hover{
   filter: drop-shadow(10px 10px 10px rgba(53, 146, 131, 0.25));
 }
@@ -32419,6 +32424,19 @@ button:hover{
 button:active{
   transition: .2s;
   box-shadow: 0 0 4px 4px  #5bc2b1;
+}
+
+.btn{
+  margin: 25px;
+  margin-top: 76px;
+}
+
+.bad{
+  background-color: #c2625b;
+}
+
+.bad:hover{
+  box-shadow: 0 0 8px 4px  #e45349c0;
 }
 
 @media (min-width: 640px) {
