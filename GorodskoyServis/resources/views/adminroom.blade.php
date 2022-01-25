@@ -11,7 +11,6 @@
 
 <div class="room-navigation">
 <a class="choosed" href="#">Новые заявки</a>
-<a href="#">Отклоненные заявки</a>
 <a href="#">Модерация категорий</a>
 </div>
 
@@ -20,11 +19,12 @@
         
             <div class="card_text admin">
                 <h2>{{$el->title}}</h2>
+                <h3>{{$el->category}}</h3>
                 <p>{{$el->discription}}</p>
                 <small>{{$el->login}}</small>
                 <small>{{$el->created_at}}</small>
-                    <div class="room-navigation">
-                        <a href="{{route('aprove', $el->id)}}"><button class="btn good" action="">Решить</button></a>
+                    <div class="elemints-in-row">
+                        <a href="{{route('approve', $el->id)}}"><button class="btn good" >Решить</button></a>
                         <a href="{{route('disprove', $el->id)}}"><button class="btn bad" >Отклонить</button></a>
                     </div>
            

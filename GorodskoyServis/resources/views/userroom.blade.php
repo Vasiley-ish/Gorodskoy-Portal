@@ -13,9 +13,6 @@
 <div class="room-navigation">
 <a class="choosed" href="">Мои заявки</a>
 <a href="/user-create-form">Подать заявку</a>
-@if( Auth::user()->name == 'Админ')
-<a href="/admin">Модерация заявок</a>
-@endif
 </div>
 
 <h2>Заявки {{Auth::user()->name}}</h2>
@@ -41,9 +38,13 @@
         <img src="{{ URL::to('/assets/images/plug.jpg') }}">
             <div class="card_text">
                 <h2>{{$el->title}}</h2>
+                <h3>{{$el->category}}</h3>
                 <p>{{$el->discription}}</p>
                 <small>{{$el->created_at}}</small>
             </div>
+        @if($el->status != 'Решена')
+            <a href="{{route('delete', $el->id)}}"><button class="bad">Удалить</button></a>
+        @endif
         </div>
     </div>
     @endif

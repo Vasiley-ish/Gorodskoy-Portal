@@ -17,11 +17,29 @@ class FormSubmitController extends Controller
         $form->discription = $req->input('discription');
         $form->image = $req->input('file');
         $form->status = 'Новая';
+        $form->image_after = 'null';
+        $form->disprove_reason = '';
 
         $form->save();
 
         return redirect()->route('userroom');
     }
+
+    public  function delete($id){
+     
+       FormSubmit::find($id)->delete();
+       return redirect()->route('userroom');
+    }
+
+    public  function approve($id){
+        $form = new FormSubmit();
+        return view('approve_form', ['data' => $form->find($id)]);
+     }
+
+     public  function disprove($id){
+        $form = new FormSubmit();
+        return view('disaprove_form', ['data' => $form->find($id)]);
+     }
 
     public  function show(){
      

@@ -32,10 +32,22 @@ Route::group([ 'middleware' => ['auth']], function () {
     Route::get('/user-create-form', function () {
         return view('form');
     })->name('user-create-form'); 
+      
+    Route::get('/userroom/{id}/delete',
+        [FormSubmitController::class, 'delete']
+    )->name('delete'); 
 
     Route::post('/user-create-form/submit', 
         'App\Http\Controllers\FormSubmitController@submit'
     )->name('usersubmit'); 
+
+    Route::get('/admin/{id}/approve',
+        [FormSubmitController::class, 'approve']
+    )->name('approve'); 
+
+    Route::get('/admin/{id}/disprove',
+        [FormSubmitController::class, 'disprove']
+    )->name('disprove'); 
 });
 
 

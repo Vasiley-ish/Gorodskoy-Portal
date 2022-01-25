@@ -21,9 +21,13 @@
         <nav>
         <!-- {{Auth::user()->name}} -->
             <ul>
-            <li><a href="/">Главная</a></li>   
+            <li><a href="/">Главная</a></li>
+                @if(Auth::user()->name != 'Админ')
                 <li> <a href="/userroom">Личный Кабинет</a></li>  
-                           
+                @endif
+                @if(Auth::user()->name == 'Админ')
+                <li> <a href="/admin">Личный Кабинет</a></li>  
+                @endif          
                 <li> <form method="POST" action="{{ route('logout') }}">
                             @csrf
 

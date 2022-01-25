@@ -16,10 +16,13 @@ class CreateFormSubmitsTable extends Migration
         Schema::create('form_submits', function (Blueprint $table) {
             $table->id();
             $table->String('login');
+            $table->Binary('image');
+            $table->Binary('image_after');
             $table->String('title');
             $table->String('category');
             $table->String('discription');
             $table->String('status');
+            $table->String('disprove_reason');
            
             $table->timestamps();
         });
