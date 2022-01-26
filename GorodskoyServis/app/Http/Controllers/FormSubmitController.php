@@ -40,6 +40,25 @@ class FormSubmitController extends Controller
         $form = new FormSubmit();
         return view('disaprove_form', ['data' => $form->find($id)]);
      }
+     
+     public  function confirm_disprove($id, FormSubmitRequest $req){
+        $form = FormSubmit::find($id);
+        $form->status = 'Отклонена';
+        $form->disprove_reason = $req->input('disprove_reason');
+
+        $form->save();
+        return redirect()->route('admin');
+     }
+
+     public  function confirm_approve($id, FormSubmitRequest $req){
+        $form = FormSubmit::find($id);
+        $form->status = 'Решена';
+        
+
+        $form->save();
+        return redirect()->route('admin');
+     }
+
 
     public  function show(){
      

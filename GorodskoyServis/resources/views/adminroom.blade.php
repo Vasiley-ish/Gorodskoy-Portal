@@ -21,7 +21,7 @@
                 <h2>{{$el->title}}</h2>
                 <h3>{{$el->category}}</h3>
                 <p>{{$el->discription}}</p>
-                <small>{{$el->login}}</small>
+                <small>{{$el->login}}</small> <br>
                 <small>{{$el->created_at}}</small>
                     <div class="elemints-in-row">
                         <a href="{{route('approve', $el->id)}}"><button class="btn good" >Решить</button></a>

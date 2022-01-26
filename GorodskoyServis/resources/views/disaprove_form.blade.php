@@ -17,17 +17,20 @@
 <div class="formspace">
     <form method="POST" action="disprove_application">
          @csrf
-
+         <h3>Отклонить заявку {{$data->title}}</h3>
          <ul>
              <li>
-                 <label for="disprove_reason">Подтверждающее изображение</label>
+                 <label for="disprove_reason">Причина отклонения</label>
                  <input type="text" name="disprove_reason" id="disprove_reason" placeholder="Причина отклонения" required minlength="2">
              </li>
 
              <li>
-                <button class="bad">Подтвердить отклонение</button>
+               
+                    <a href="{{route('/submit', $data->id)}}"><button class="btn bad" >Подтвердить отклонение</button></a>
+                
              </li>
          </ul>
+         
     </form>
 </div>
 

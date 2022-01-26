@@ -25,7 +25,7 @@ class FormSubmitRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'disprove_reason' => 'required|min:2'
         ];
     }
 }

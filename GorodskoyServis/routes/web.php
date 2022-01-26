@@ -48,6 +48,15 @@ Route::group([ 'middleware' => ['auth']], function () {
     Route::get('/admin/{id}/disprove',
         [FormSubmitController::class, 'disprove']
     )->name('disprove'); 
+
+    Route::post('/admin/{id}/approve_application',
+    'App\Http\Controllers\FormSubmitController@confirm_approve'
+    )->name('confirm_approve'); 
+
+    Route::post('/admin/{id}/disprove_application',
+        [FormSubmitController::class, 'confirm_disprove']
+    )->name('confirm_disprove'); 
+ 
 });
 
 
