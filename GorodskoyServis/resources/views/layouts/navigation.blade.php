@@ -85,6 +85,10 @@
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
+
+                    <x-responsive-nav-link :href="route('userroom')">
+                        {{ __('кабинет') }}
+                    </x-responsive-nav-link>
                 </form>
             </div>
         </div>

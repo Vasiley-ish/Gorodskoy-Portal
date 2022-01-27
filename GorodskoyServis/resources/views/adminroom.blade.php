@@ -11,7 +11,7 @@
 
 <div class="room-navigation">
 <a class="choosed" href="#">Новые заявки</a>
-<a href="#">Модерация категорий</a>
+<a href="/admin/category_mod">Модерация категорий</a>
 </div>
 
 @foreach($data as $el)

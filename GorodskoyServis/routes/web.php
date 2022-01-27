@@ -40,22 +40,6 @@ Route::group([ 'middleware' => ['auth']], function () {
     Route::post('/user-create-form/submit', 
         'App\Http\Controllers\FormSubmitController@submit'
     )->name('usersubmit'); 
-
-    Route::get('/admin/{id}/approve',
-        [FormSubmitController::class, 'approve']
-    )->name('approve'); 
-
-    Route::get('/admin/{id}/disprove',
-        [FormSubmitController::class, 'disprove']
-    )->name('disprove'); 
-
-    Route::post('/admin/{id}/approve_application',
-    'App\Http\Controllers\FormSubmitController@confirm_approve'
-    )->name('confirm_approve'); 
-
-    Route::post('/admin/{id}/disprove_application',
-        [FormSubmitController::class, 'confirm_disprove']
-    )->name('confirm_disprove'); 
  
 });
 
@@ -64,5 +48,33 @@ Route::group(['middleware' => ['role:admin']], function () {
     
     Route::get('/admin',  [FormSubmitController::class, 'showadmin']
     )->name('admin');
+
+    Route::get('/admin/{id}/approve',
+    [FormSubmitController::class, 'approve']
+    )->name('approve'); 
+
+    Route::get('/admin/{id}/disprove',
+    [FormSubmitController::class, 'disprove']
+    )->name('disprove'); 
+
+    Route::post('/admin/{id}/approve_application',
+    'App\Http\Controllers\FormSubmitController@confirm_approve'
+    )->name('confirm_approve'); 
+
+    Route::post('/admin/{id}/disprove_application',
+    [FormSubmitController::class, 'confirm_disprove']
+    )->name('confirm_disprove'); 
+
+    Route::get('/admin/category_mod',
+    [FormSubmitController::class, 'showcategoryes']
+    )->name('categoryes'); 
+
+    Route::post('/admin/category_add',
+    [FormSubmitController::class, 'newCategory']
+    )->name('new-category'); 
+
+    Route::get('/admin/category_mod_application',
+    [FormSubmitController::class, 'delete_category']
+    )->name('delete_category'); 
 
 });

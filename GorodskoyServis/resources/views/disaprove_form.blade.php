@@ -26,7 +26,7 @@
 
              <li>
                
-                    <a href="{{route('/submit', $data->id)}}"><button class="btn bad" >Подтвердить отклонение</button></a>
+                    <a href="{{route('confirm_disprove', $data->id)}}"><button class="btn bad" >Подтвердить отклонение</button></a>
                 
              </li>
          </ul>

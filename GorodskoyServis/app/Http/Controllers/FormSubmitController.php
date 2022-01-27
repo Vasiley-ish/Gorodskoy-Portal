@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FormSubmitRequest;
 use Illuminate\Http\Request;
 use App\Models\FormSubmit;
+use App\Models\Categoryes;
 
 class FormSubmitController extends Controller
 {
@@ -78,5 +79,29 @@ class FormSubmitController extends Controller
             return view('dashboard', ['data' => $form->orderBy('created_at', 'desc')->where('status', 'Решена')->take(4)->get()],
             
         );
+    }
+
+    public  function showcategoryes(){
+     
+        $cat = new Categoryes();
+            return view('categoryes', ['cats' => $cat->orderBy('created_at', 'desc')->get()],
+        );
+    }
+    
+    public  function newCategory(FormSubmitRequest $req){
+     
+        $cat = new Categoryes();
+        $cat->category = $req->input('category');
+
+        $cat->save();
+
+        return redirect()->route('categoryes');
+    }
+
+    public  function delete_category($id, $category){
+     
+        FormSubmit::where('category', 'category')->delete();
+        Categoryes::find($category)->delete();
+        return redirect()->route('categoryes');
     }
 }

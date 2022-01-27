@@ -32194,6 +32194,7 @@ h2{
 h3{
   font-weight: bold;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .logo img{
@@ -32446,6 +32447,26 @@ button:active{
 
 input{
   transition: 0.1s;
+}
+
+.delete_category_el{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  border: solid 1px #5bc2b1;
+  padding: 8px 5%;
+  border-radius: 15px;
+  margin: 15px auto;
+}
+
+.delete_category{
+  width: 20%;
+}
+
+.delete_category{
+  width: 20%;
+  min-width: 150px;
 }
 
 @media (min-width: 640px) {
