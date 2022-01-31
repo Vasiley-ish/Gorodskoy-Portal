@@ -67,6 +67,12 @@ class FormSubmitController extends Controller
         return view('userroom', ['data' => $form->orderBy('created_at', 'desc')->get()]);
     }
 
+    public  function showCats(){
+     
+        $cats = new Categoryes();
+        return view('form', ['cats' => $cats->orderBy('created_at', 'desc')->get()]);
+    }
+
     public  function showadmin(){
      
         $form = new FormSubmit();
@@ -99,9 +105,11 @@ class FormSubmitController extends Controller
     }
 
     public  function delete_category($id, $category){
-     
-        FormSubmit::where('category', 'category')->delete();
-        Categoryes::find($category)->delete();
+
+        $form = new FormSubmit();
+        FormSubmit::where('category', $category)->delete();
+        
+        Categoryes::find($id)->delete();
         return redirect()->route('categoryes');
     }
 }

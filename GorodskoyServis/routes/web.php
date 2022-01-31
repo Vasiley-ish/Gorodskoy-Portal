@@ -29,9 +29,9 @@ Route::group([ 'middleware' => ['auth']], function () {
         [FormSubmitController::class, 'show']
     )->name('userroom');
     
-    Route::get('/user-create-form', function () {
-        return view('form');
-    })->name('user-create-form'); 
+    Route::get('/user-create-form', 
+    [FormSubmitController::class, 'showCats']
+    )->name('user-create-form'); 
       
     Route::get('/userroom/{id}/delete',
         [FormSubmitController::class, 'delete']
@@ -73,7 +73,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     [FormSubmitController::class, 'newCategory']
     )->name('new-category'); 
 
-    Route::get('/admin/category_mod_application',
+    Route::get('/admin/category_mod/{id}/{category}',
     [FormSubmitController::class, 'delete_category']
     )->name('delete_category'); 
 

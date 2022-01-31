@@ -18,7 +18,7 @@
     @foreach($cats as $el)
     <div class="delete_category_el">
       <p class="delete_category">{{$el->category}}</p>
-      <a href="{{route('delete_category', $el->id, $el->category)}}"><button class="delete_category bad">Удалить</button></a>
+      <a href="{{route('delete_category', [$el->id, $el->category])}}"><button class="delete_category bad">Удалить</button></a>
     </div>
     @endforeach
 </div>

@@ -29,8 +29,9 @@
              <li>
                  <label for="type">Категория</label>
                  <select name="type" id="type" placeholder="Название заметки"  required >
-                    <option value="Ремонт дорог">Ремонт дорог</option>
-                    <option value="Ремонт дорог">Уборка мусора</option>
+                    @foreach($cats as $cat)
+                        <option>{{$cat->category}}</option>
+                    @endforeach
                  </select>
              </li>
 
