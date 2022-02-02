@@ -33,7 +33,7 @@ Route::group([ 'middleware' => ['auth']], function () {
     [FormSubmitController::class, 'showCats']
     )->name('user-create-form'); 
       
-    Route::get('/userroom/{id}/delete',
+    Route::post('/userroom/{id}/delete',
         [FormSubmitController::class, 'delete']
     )->name('delete'); 
 
@@ -73,7 +73,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     [FormSubmitController::class, 'newCategory']
     )->name('new-category'); 
 
-    Route::get('/admin/category_mod/{id}/{category}',
+    Route::post('/admin/category_mod/{id}/{category}',
     [FormSubmitController::class, 'delete_category']
     )->name('delete_category'); 
 

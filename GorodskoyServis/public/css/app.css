@@ -32144,7 +32144,7 @@ select {
   font-family: 'Roboto', sans-serif;
   color: #000;
   font-weight: 400;
-  transition: .5s;
+  transition: .8s;
 }
 
 body::-webkit-scrollbar {
@@ -32175,15 +32175,16 @@ h1{
   margin: 25px 0 35px;
 }
 
-.orange-box{
+.solved_counter{
   background-color:#F5A351;
   width: 95%;
   padding: 16px 30px;
   border-radius: 15px;
 }
 
-.orange-box h2{
+.solved_counter h2{
   margin-bottom: 0;
+  background-color:#F5A351;
 }
 
 h2{
@@ -32321,7 +32322,7 @@ nav ul{
   text-align: center;
 }
 
-.new{
+.new-card{
   font-weight: bold;
   background-color: #F5A351;
   width: 101%;
@@ -32467,6 +32468,47 @@ input{
 .delete_category{
   width: 20%;
   min-width: 150px;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+.blocks label {
+  width:23%;
+  float:left;
+  text-align:center;
+  background:#ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color:#222222;
+  padding:0.5%;
+  margin:0.5%;
+  margin-bottom:30px;
+  cursor:pointer;
+}
+
+input[type="radio"][id="new"]:checked + label {
+  background:#F5A351;
+}
+
+input[type="radio"][id="new"]:checked ~ .disp, input[type="radio"][id="new"]:checked ~ .solv {
+  display: none;
+}
+
+input[type="radio"][id="disp"]:checked + label {
+  background:#c2625b;
+}
+
+input[type="radio"][id="disp"]:checked ~ .new, input[type="radio"][id="disp"]:checked ~ .solv {
+  display: none;
+}
+
+input[type="radio"][id="solv"]:checked + label {
+  background:#5bc2b1;
+}
+
+input[type="radio"][id="solv"]:checked ~ .new, input[type="radio"][id="solv"]:checked ~ .disp {
+  display: none;
 }
 
 @media (min-width: 640px) {

@@ -19,7 +19,8 @@
             <div>
                 <x-label for="name" :value="__('ФИО')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus pattern="^[а-яА-ЯёЁ\s]+$"/>
+                <small>*только кириллица</small>
             </div>
 
              <!-- Логин -->

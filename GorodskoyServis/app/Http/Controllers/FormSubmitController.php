@@ -82,7 +82,7 @@ class FormSubmitController extends Controller
     public  function showhub(){
      
         $form = new FormSubmit();
-            return view('dashboard', ['data' => $form->orderBy('created_at', 'desc')->where('status', 'Решена')->take(4)->get()],
+            return view('dashboard', ['data' => $form->orderBy('updated_at', 'desc')->where('status', 'Решена')->get()],
             
         );
     }
