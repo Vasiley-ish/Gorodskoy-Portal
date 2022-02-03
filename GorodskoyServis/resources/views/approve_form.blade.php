@@ -16,13 +16,13 @@
 
 
 <div class="formspace">
-    <form method="POST" action="approve_application">
+    <form method="POST"  enctype="multipart/form-data" action="approve_application">
          @csrf
          <h3>Решить заявку {{$data->title}}</h3>
          <ul>
              <li>
                  <label for="after_photo">Подтверждающее изображение</label>
-                 <input type="file" name="after_photo" id="after_photo" required  accept=".jpg, .jpeg, .png">
+                 <input type="file" name="afterImage" id="afterImage" required  accept=".jpg, .jpeg, .png">
              </li>
 
              <li>

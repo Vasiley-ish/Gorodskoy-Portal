@@ -6,6 +6,7 @@ use App\Http\Requests\FormSubmitRequest;
 use Illuminate\Http\Request;
 use App\Models\FormSubmit;
 use App\Models\Categoryes;
+use Illuminate\Support\Facades\Storage;
 
 class FormSubmitController extends Controller
 {
@@ -16,10 +17,14 @@ class FormSubmitController extends Controller
         $form->title = $req->input('title');
         $form->category = $req->input('type');
         $form->discription = $req->input('discription');
-        $form->image = $req->input('file');
+        // $form->image = $req->input('beforeImage');
         $form->status = 'Новая';
-        $form->image_after = 'null';
+        $form->imageafter = 'null';
         $form->disprove_reason = '';
+       
+        if($req->file('beforeImage') != null) {
+            $form->image = substr($req->file('beforeImage')->store('public/image') , 13);
+        }
 
         $form->save();
 
@@ -54,7 +59,10 @@ class FormSubmitController extends Controller
      public  function confirm_approve($id, FormSubmitRequest $req){
         $form = FormSubmit::find($id);
         $form->status = 'Решена';
-        
+
+        if($req->file('afterImage') != null) {
+            $form->imageafter = substr($req->file('afterImage')->store('public/image/after') , 13);
+        }
 
         $form->save();
         return redirect()->route('admin');

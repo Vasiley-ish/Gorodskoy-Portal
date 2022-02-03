@@ -17,7 +17,7 @@
 <h2>Новая заявка</h2>
 
 <div class="formspace">
-    <form method="POST" enctype="multipart/form-data" action="/user-create-form/submit">
+    <form method="POST"  enctype="multipart/form-data" action="/user-create-form/submit">
          @csrf
 
          <ul>
@@ -41,8 +41,8 @@
              </li>
 
               <li>
-                 <label for="file">Фото</label>
-                  <input type="file" name="file" id="file" required  accept=".jpg, .jpeg, .png">
+                 <label for="beforeImage">Фото</label>
+                  <input type="file" name="beforeImage" id="beforeImage" placeholder="File" required  accept=".jpg, .jpeg, .png">
              </li>
 
              <li>

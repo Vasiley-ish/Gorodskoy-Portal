@@ -25,7 +25,7 @@ class FormSubmitRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'beforeImage' => 'mimes:png,jpg,jpeg,bmp|max:10240'
         ];
     }
 }

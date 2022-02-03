@@ -17,7 +17,7 @@ class CreateFormSubmitsTable extends Migration
             $table->id();
             $table->String('login');
             $table->Binary('image');
-            $table->Binary('image_after');
+            $table->Binary('imageafter');
             $table->String('title');
             $table->String('category');
             $table->String('discription');

@@ -50,12 +50,15 @@
                             <p class="fucked">
                             @endif
                             {{$el->status}}</p>
-                        <img src="{{ URL::to('/assets/images/plug.jpg') }}">
+                        <img src="{{ URL::to('/assets/images/beforeImages/'.$el->image)}}">
                             <div class="card_text">
                                 <h2>{{$el->title}}</h2>
                                 <h3>{{$el->category}}</h3>
                                 <p>{{$el->discription}}</p>
                                 <small>{{$el->created_at}}</small>
+                                @if($el->status == 'Отклонена')
+                                    <p class="fuck">{{$el->disprove_reason}}</p>
+                                @endif
                             </div>
                         @if($el->status != 'Решена')
                         <form method="post" action="{{route('delete', $el->id)}}">
