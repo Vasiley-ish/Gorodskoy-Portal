@@ -43,8 +43,8 @@
 
     <div class="card">
         <div class="card-content">
-        <img src="{{ URL::to('/assets/images/beforeImages/'.$el->image)}}">
-        <img class="on_top" src="{{ URL::to('/assets/images/'.$el->imageafter)}}">
+        <img src="{{ URL::to('/assets/images/'.$el->imageafter)}}">
+        <img class="on_top" src="{{ URL::to('/assets/images/beforeImages/'.$el->image)}}">
             <div class="card_text">
                 <h2>{{$el->title}}</h2>
                 <h3>{{$el->category}}</h3>
