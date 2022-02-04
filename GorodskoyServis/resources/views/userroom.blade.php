@@ -50,7 +50,12 @@
                             <p class="fucked">
                             @endif
                             {{$el->status}}</p>
-                        <img src="{{ URL::to('/assets/images/beforeImages/'.$el->image)}}">
+                                @if($el->status != 'Решена')
+                                <img src="{{ URL::to('/storage/image/'.$el->image)}}">
+                                @else
+                                <img src="{{ URL::to('storage/image/'.$el->imageafter)}}">
+                                <img class="on_top" src="{{ URL::to('storage/image/'.$el->image)}}">
+                                @endif
                             <div class="card_text">
                                 <h2>{{$el->title}}</h2>
                                 <h3>{{$el->category}}</h3>
@@ -83,7 +88,7 @@
           event.preventDefault();
           swal({
               title: `Уверены, что хотите удалить заявку?`,
-              text: "Заявка {{$el->title}} будет безвозвратно удалена",
+              text: "Заявка будет безвозвратно удалена",
               icon: "warning",
               buttons: true,
               dangerMode: true,

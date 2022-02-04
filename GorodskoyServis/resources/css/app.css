@@ -156,7 +156,7 @@ main{
 } 
 
 .card-content img{
-    object-fit: cover;
+  object-fit: cover;
   width: 400px; 
   height: 350px;
 }

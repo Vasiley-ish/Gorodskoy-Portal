@@ -23,7 +23,7 @@ class FormSubmitController extends Controller
         $form->disprove_reason = '';
        
         if($req->file('beforeImage') != null) {
-            $form->image = substr($req->file('beforeImage')->store('public/image') , 13);
+            $form->image = substr($req->file('beforeImage')->store('public/image/beforeImages') , 13);
         }
 
         $form->save();
